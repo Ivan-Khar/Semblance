@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(MinecraftServer.class)
-public class MinecraftServerMixin implements MinecraftServerInterface {
+public class MinecraftServerMixin {
 	@ModifyReturnValue(method = "getServerModName", at = @At("RETURN"))
 	public String replaceServerModName(String original) {
 		return Config.getServerBrand();
